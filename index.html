@@ -20,15 +20,86 @@ hr
   align: center;
   size: 8
     
-#slider {overflow: hidden;
-  }
-#slider figure {
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {box-sizing: border-box}
+body {font-family: Verdana, sans-serif; margin:0}
+.mySlides {display: none}
+img {vertical-align: middle;}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
   position: relative;
-  width: 500%
-  margin: 0;
-  left: 0;
-  animation: 60s slider infinite;
-  }
+  margin: auto;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .prev, .next,.text {font-size: 11px}
+}
   
 </style>
 </head>
@@ -45,17 +116,73 @@ hr
   
   <img src="https://lh3.googleusercontent.com/z9KxqkH95lHGb2HLhmvODPpQBnvQ7muuE46YeFblz6e7cQDNzbuaS-HKq34Ir6iMwvCDhGMdaSN-mBcNX0CREOAC2-BOqt1PGaQox9CgqC2RljDR1xylxwUZeuzYWZNhBKK7GUzMyg=w2400" alt="who am I" style="width:35%;">
 
-  <div id="slider">
-    <figure>
-      <img src="https://lh3.googleusercontent.com/lqUm7V_j0TNL7TL8-XubtZYlBmlzqR15Gwlmc9ofWmjot5flhOd8jm6bfwiIl9IN4Zj5jb--BDTtn-i8XQDGI3adHsEhW5X4d-8p0ZRXn2DILaxsVKVcFdVCBDUZBePGJVhPh6Z-gw=w2400" alt="well,I'm glad you asked">
-      <img src="https://lh3.googleusercontent.com/OUxxxHjPHlPwvZVT5pG9qQHbWoIwIhQFhElGUyrmvcxtbsEU7U-JYk1UQudax6mXunQyNu4Q4tRKXOV9gIFFAQtCySV2CVvh5YMUrvpVWlH2XETnDwn5VGY8vgEAOMcA-VFySftVLw=w2400" alt="this is where I work">
-      <img src="https://lh3.googleusercontent.com/YLGLRYOFeiaS_hQyivb87KnZKuzdO3AF_GVGgHNiNgFthjzPZEpq5vz1FnioYcbWXSi_YIvJGVmiKmZVGg9hPn_bjVXws9tU-AFH2b7XvOGFU5h5Mobg2Dxxlm8JhTFZ1-DA-spCAw=w2400" alt="this is where I serve">
-      <img src="https://lh3.googleusercontent.com/2Mw70BHxdS-yORsMQRXfEgRQTo8WDCBzJk6clD9V0zDfIFfxDMEGrad6JaGx550_GJrrytwDLxwdQoamvUqvX3vw2xfT5COcFszGSWuRCfTjTFC1pfh1mELq2ENKungXYiQMBawaRg=w2400" alt="this is where I play">
-      <img src="https://lh3.googleusercontent.com/p_ag1hzCXOF2ok7Tje0Z4ei9NAPYAsbhD0H1G_2CZ4UdQVF-9f-09n3Gjv2umROYx2WzVj0FpbfUPpYuJCx2hknv6qZSVNRCxHCcqnRn3hnCKNy05plVdBckJod-RTp8Y2ldTE5p_g=w2400" alt="closing remarks">
-  </div>
+ <div class="slideshow-container">
 
-  
+<div class="mySlides fade">
+  <img src="https://lh3.googleusercontent.com/lqUm7V_j0TNL7TL8-XubtZYlBmlzqR15Gwlmc9ofWmjot5flhOd8jm6bfwiIl9IN4Zj5jb--BDTtn-i8XQDGI3adHsEhW5X4d-8p0ZRXn2DILaxsVKVcFdVCBDUZBePGJVhPh6Z-gw=w2400" alt="well,I'm glad you asked" style="width:100%">
+</div>
+
+<div class="mySlides fade">
+  <img src="https://lh3.googleusercontent.com/OUxxxHjPHlPwvZVT5pG9qQHbWoIwIhQFhElGUyrmvcxtbsEU7U-JYk1UQudax6mXunQyNu4Q4tRKXOV9gIFFAQtCySV2CVvh5YMUrvpVWlH2XETnDwn5VGY8vgEAOMcA-VFySftVLw=w2400" alt="this is where I work" style="width:100%">
+</div>
+
+<div class="mySlides fade">
+  <img src="https://lh3.googleusercontent.com/YLGLRYOFeiaS_hQyivb87KnZKuzdO3AF_GVGgHNiNgFthjzPZEpq5vz1FnioYcbWXSi_YIvJGVmiKmZVGg9hPn_bjVXws9tU-AFH2b7XvOGFU5h5Mobg2Dxxlm8JhTFZ1-DA-spCAw=w2400" alt="this is where I serve" style="width:100%">
+</div>
+   
+<div class="mySlides fade">
+  <img src="https://lh3.googleusercontent.com/2Mw70BHxdS-yORsMQRXfEgRQTo8WDCBzJk6clD9V0zDfIFfxDMEGrad6JaGx550_GJrrytwDLxwdQoamvUqvX3vw2xfT5COcFszGSWuRCfTjTFC1pfh1mELq2ENKungXYiQMBawaRg=w2400" alt="this is where I play" style="width:100%">
+</div>
+   
+<div class="mySlides fade">
+  <img src="https://lh3.googleusercontent.com/p_ag1hzCXOF2ok7Tje0Z4ei9NAPYAsbhD0H1G_2CZ4UdQVF-9f-09n3Gjv2umROYx2WzVj0FpbfUPpYuJCx2hknv6qZSVNRCxHCcqnRn3hnCKNy05plVdBckJod-RTp8Y2ldTE5p_g=w2400" alt="closing remarks" style="width:100%">
+</div>
+
+<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+<a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+</div>
+<br>
+
+<div style="text-align:center">
+  <span class="dot" onclick="currentSlide(1)"></span> 
+  <span class="dot" onclick="currentSlide(2)"></span> 
+  <span class="dot" onclick="currentSlide(3)"></span> 
+</div>
+
+<script>
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";  
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+}
+</script>
+
   
   <hr>
   
   <img src="https://lh3.googleusercontent.com/0ILG2bWxw5n3W7EhmrzhfhVtGCyYionZNuX5TatI6Y3FdGwlnyQ785HDJgcTj_-cyXbwekIsGiWTJDlayR2kbVa0VG1E_sz7jhK3Kbc9-f0R9Oqm1y9YYNmbq9srGUbsVtmCne9j-g=w2400" alt="where to find me" style="width 35%;">
+
+    </body>
+    </html>
